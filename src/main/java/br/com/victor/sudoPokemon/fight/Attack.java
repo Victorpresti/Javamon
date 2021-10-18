@@ -1,10 +1,13 @@
 package br.com.victor.sudoPokemon.fight;
 
-import br.com.victor.sudoPokemon.Moves;
-import br.com.victor.sudoPokemon.Pokemon;
+import br.com.victor.sudoPokemon.pokemon.Moves;
+import br.com.victor.sudoPokemon.pokemon.Pokemon;
 
 import java.util.Random;
 
+/*
+This class manages everything related to attacking the opposing Pokemon
+ */
 public class Attack {
 
     DamageHandler dh = new DamageHandler();
@@ -27,18 +30,19 @@ public class Attack {
 
         System.out.println(attacker.getName() + " uses " + selectedMove.getName());
 
-        //Check if move hits
+        /*
+        Checks if the move misses
+         */
         if(checkAccuracy(selectedMove)){
-
             damageDealt = dh.adjustDamage(selectedMove, attacker, defender);
             System.out.println(defender.getName() + " loses " + damageDealt + " Hitpoints");
             loseHP(defender, damageDealt);
 
-            //Check for additional effects
+            /*
+            Checks for additional effects on the move used
+             */
             if(selectedMove.getAdditionalEffect()){
-                if (rand.nextInt(100) + 1 <= selectedMove.getAdditionalEffectChance()){
-                    statusManager.manage(attacker, defender, selectedMove);
-                }
+                statusManager.manage(attacker, defender, selectedMove, rand.nextInt(100) + 1);
             }
 
         } else {
@@ -46,15 +50,20 @@ public class Attack {
         }
     }
 
+    /*
+    Handles the HP lost during an attack
+     */
     private void loseHP(Pokemon defender, int damageDealt){
         defender.getCurrentStats().setHitpoints(defender.getCurrentStats().getHitpoints() - damageDealt);
         if (defender.getCurrentStats().getHitpoints() < 0) defender.getCurrentStats().setHitpoints(0);
         System.out.println(defender.getName() + " has " + defender.getCurrentStats().getHitpoints() + " Hitpoints");
     }
 
+    /*
+    Simple accuracy check, returns true or false
+     */
     private boolean checkAccuracy(Moves move){
         Random rand = new Random();
-
         return move.getAccuracy() - 1 >= rand.nextInt(100);
     }
 

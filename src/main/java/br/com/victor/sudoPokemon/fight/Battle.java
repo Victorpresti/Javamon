@@ -1,11 +1,9 @@
 package br.com.victor.sudoPokemon.fight;
 
-import br.com.victor.sudoPokemon.Pokemon;
-import br.com.victor.sudoPokemon.Status;
+import br.com.victor.sudoPokemon.pokemon.Pokemon;
+import br.com.victor.sudoPokemon.pokemon.Status;
 import br.com.victor.sudoPokemon.lobby.Lobby;
 
-import java.util.Arrays;
-import java.util.List;
 import java.util.Scanner;
 
 public class Battle {

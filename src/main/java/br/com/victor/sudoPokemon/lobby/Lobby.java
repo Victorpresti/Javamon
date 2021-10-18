@@ -1,9 +1,9 @@
 package br.com.victor.sudoPokemon.lobby;
 
-import br.com.victor.sudoPokemon.Moves;
-import br.com.victor.sudoPokemon.Pokemon;
-import br.com.victor.sudoPokemon.PokemonGenerator;
-import br.com.victor.sudoPokemon.SearchPokemon;
+import br.com.victor.sudoPokemon.pokemon.Moves;
+import br.com.victor.sudoPokemon.pokemon.Pokemon;
+import br.com.victor.sudoPokemon.pokemon.PokemonGenerator;
+import br.com.victor.sudoPokemon.pokemon.SearchPokemon;
 import br.com.victor.sudoPokemon.fight.Battle;
 
 import java.util.Arrays;
@@ -19,16 +19,16 @@ public class Lobby {
     List<List<Pokemon>> listaPokemons = pg.generatePokemon(1);
     List<Pokemon> GenOne = listaPokemons.get(0);
 
-    public void lobby(){
+    public void lobby() {
 
         System.out.println("----------------------------------------------");
         System.out.println("-----------------   LOBBY   ------------------");
         System.out.println("----------------------------------------------");
 
-        //Montar seu time
+        //Build your team
         //new BuildTeam().teamBuilder(sc);
 
-        //Escolher o seu pokemon
+        //Choosing your Pokemon
         System.out.println("Digite o nome do seu pokemon, digite help para obter a lista de pokemons disponíveis");
         String pokemonSelecionado = sc.next();
 
@@ -55,7 +55,7 @@ public class Lobby {
         }
         Pokemon enemy = sp.searchForName(GenOne, pokemonSelecionado).get();
 
-           //Level
+        //Level
         levelPokemon(player, enemy);
 
         player.addMoves(Moves.BLIZZARD);
@@ -70,7 +70,6 @@ public class Lobby {
     }
 
     public void listaPokemon(List<List<Pokemon>> listaPokemons) {
-
         System.out.println("------ Geração 1 ------");
         GenOne.forEach(p -> System.out.println(p.getName()));
     }
@@ -98,13 +97,17 @@ public class Lobby {
         Pokemon player = sp.searchForName(GenOne, "Charizard").get();
         Pokemon enemy = sp.searchForName(GenOne,  "Venusaur").get();
 
-        player.addMoves(Arrays.asList(Moves.FIRE_BLAST, Moves.BLIZZARD, Moves.THUNDER, Moves.HYDRO_PUMP));
-        enemy.addMoves(Arrays.asList(Moves.FIRE_BLAST, Moves.BLIZZARD, Moves.THUNDER, Moves.HYDRO_PUMP));
-
-        player.changeLevel(50);
-        enemy.changeLevel(50);
+        Pokemon p1 = player.clone(player);
+        Pokemon e1 = enemy.clone(enemy);
 
 
-        bt.pokemonBattle(player, enemy);
+        p1.addMoves(Arrays.asList(Moves.FIRE_BLAST, Moves.BLIZZARD, Moves.THUNDER, Moves.HYDRO_PUMP));
+        e1.addMoves(Arrays.asList(Moves.FIRE_BLAST, Moves.BLIZZARD, Moves.THUNDER, Moves.HYDRO_PUMP));
+
+        p1.changeLevel(50);
+        e1.changeLevel(50);
+
+
+        bt.pokemonBattle(p1, e1);
     }
 }

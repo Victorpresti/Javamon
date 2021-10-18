@@ -1,8 +1,5 @@
 package br.com.victor.sudoPokemon.lobby;
 
-import br.com.victor.sudoPokemon.Pokemon;
-
-import java.util.List;
 import java.util.Scanner;
 
 public class BuildTeam {
