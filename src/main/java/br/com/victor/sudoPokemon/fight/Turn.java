@@ -68,10 +68,13 @@ public class Turn {
     TODO Item and Run
      */
     private int actionSelecter(){
+        int action = 0;
         System.out.println("Choose your action: ");
-        System.out.println("(1) Fight: ");
-        System.out.println("(2) Pokemon: ");
-        int action = ScannerAux.scanInt();
+        System.out.println("(1) Fight ");
+        System.out.println("(2) Pokemon ");
+        System.out.println("(3) Item ");
+        System.out.println("(4) Run ");
+        action = ScannerAux.scanInt();
         if(action < 1 || action > 4){
             System.out.println("Invalid action");
             return actionSelecter();
@@ -89,6 +92,19 @@ public class Turn {
                 moveSelector(playerPokemon, enemyPokemon);
                 break;
             case 2:
+                System.out.println("TODO");
+                System.out.println("Back to the menu");
+                battleMenu(playerPokemon, enemyPokemon);
+                break;
+            case 3:
+                System.out.println("TODO");
+                System.out.println("Back to the menu");
+                battleMenu(playerPokemon, enemyPokemon);
+                break;
+            case 4:
+                System.out.println("TODO");
+                System.out.println("Back to the menu");
+                battleMenu(playerPokemon, enemyPokemon);
                 break;
         }
     }
