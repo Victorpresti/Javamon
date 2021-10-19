@@ -2,6 +2,7 @@ package br.com.victor.sudoPokemon.fight;
 
 import br.com.victor.sudoPokemon.pokemon.Moves;
 import br.com.victor.sudoPokemon.pokemon.Pokemon;
+import br.com.victor.sudoPokemon.utils.ScannerAux;
 
 import java.util.Scanner;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -9,7 +10,6 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class Turn {
 
     Attack attack = new Attack();
-    Scanner sc = new Scanner(System.in);
     int selectedNumber = 0;
     StatusManager manager = new StatusManager();
 
@@ -56,7 +56,7 @@ public class Turn {
             moveCounter.getAndIncrement();
         });
 
-        selectedNumber = sc.nextInt();
+        selectedNumber = ScannerAux.scanInt();
 
         if (selectedNumber == 0){
             battleMenu(playerPokemon, enemyPokemon);
@@ -71,7 +71,7 @@ public class Turn {
         System.out.println("Choose your action: ");
         System.out.println("(1) Fight: ");
         System.out.println("(2) Pokemon: ");
-        int action = sc.nextInt();
+        int action = ScannerAux.scanInt();
         if(action < 1 || action > 4){
             System.out.println("Invalid action");
             return actionSelecter();
