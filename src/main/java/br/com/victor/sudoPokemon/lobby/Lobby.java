@@ -19,7 +19,7 @@ public class Lobby {
         System.out.println("----------------------------------------------");
 
         //Build your team
-        //new BuildTeam().teamBuilder(sc);
+        //new BuildTeam().teamBuilder();
 
         //Choosing your Pokemon
         Pokemon a1 = sp.pokemonSearch();
@@ -29,9 +29,6 @@ public class Lobby {
         Pokemon b1 = sp.pokemonSearch();
         Pokemon b1c = b1.clone(b1);
 
-        //Level
-        //levelPokemon(a1, b1);
-        //Quick startup
         a1c.changeLevel(50);
         b1c.changeLevel(50);
 
@@ -40,7 +37,6 @@ public class Lobby {
         b1c.addMoves(Arrays.asList(Moves.FIRE_BLAST, Moves.BLIZZARD, Moves.THUNDER, Moves.HYDRO_PUMP));
 
         bt.pokemonBattle(a1c, b1c);
-
     }
 
 

@@ -24,6 +24,7 @@ public class Attack {
         attack(attacker, defender, attacker.getMoves().get(rand.nextInt(attacker.getMoves().size())));
     }
 
+
     private void attack(Pokemon attacker, Pokemon defender, Moves selectedMove){
 
         int damageDealt;

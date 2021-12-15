@@ -4,7 +4,6 @@ import br.com.victor.sudoPokemon.pokemon.Moves;
 import br.com.victor.sudoPokemon.pokemon.Pokemon;
 import br.com.victor.sudoPokemon.utils.ScannerAux;
 
-import java.util.Scanner;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Turn {
@@ -28,7 +27,13 @@ public class Turn {
     TODO Speed tie
      */
     private void bothAttack(Pokemon playerPokemon, Pokemon enemyPokemon, Moves move){
-        if (playerPokemon.getCurrentStats().getSpeed() > enemyPokemon.getCurrentStats().getSpeed()) {
+        if (playerPokemon.getCurrentStats().getSpeed() == enemyPokemon.getCurrentStats().getSpeed()){
+            double resultado = Math.round(((Math.random() * (100 - 1)) + 1) * 100.0) / 100.0;
+            if (resultado >= 50.0){
+
+            }
+        }
+        else if (playerPokemon.getCurrentStats().getSpeed() > enemyPokemon.getCurrentStats().getSpeed()) {
             attack.playerAttack(playerPokemon, enemyPokemon, move);
             if(playerPokemon.getCurrentStats().getHitpoints() > 0 && enemyPokemon.getCurrentStats().getHitpoints() > 0){
                 attack.enemyAttack(enemyPokemon, playerPokemon);

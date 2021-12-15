@@ -1,21 +1,23 @@
 package br.com.victor.sudoPokemon.lobby;
 
+import br.com.victor.sudoPokemon.utils.ScannerAux;
+
 import java.util.Scanner;
 
 public class BuildTeam {
 
-    public void teamBuilder(Scanner sc){
+    public void teamBuilder(){
 
-       choosePokemon(numberOfPokemons(sc));
+       choosePokemon(numberOfPokemons());
     }
 
-    private int numberOfPokemons(Scanner sc){
+    private int numberOfPokemons(){
         System.out.println("Digite quantos pokemons você quer adicionar ao seu time, máximo 6");
-        int numberOfPokemon = sc.nextInt();
+        int numberOfPokemon = ScannerAux.scanInt();
 
         while(numberOfPokemon <= 0 || numberOfPokemon > 6){
-            System.out.println("Seu time deve conter pelo menos 1 pokemon e no máximo 6");
-            numberOfPokemon = sc.nextInt();
+            System.out.println("Your team must contain at least 1 pokemon");
+            numberOfPokemon = ScannerAux.scanInt();
         }
 
         return numberOfPokemon;
@@ -23,7 +25,6 @@ public class BuildTeam {
 
     private void choosePokemon(int numberOfPokemon){
         for (int i = 0; i < numberOfPokemon; i++) {
-
         }
     }
 }

@@ -19,4 +19,9 @@ public class PlayerTest {
         Assertions.assertEquals(player, new Player());
     }
 
+    @Test
+    void testTest(){
+        System.out.println(Math.round(((Math.random() * (100 - 1)) + 1) * 100.0) / 100.0);
+    }
+
 }

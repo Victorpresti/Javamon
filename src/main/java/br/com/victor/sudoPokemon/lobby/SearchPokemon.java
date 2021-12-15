@@ -3,6 +3,7 @@ package br.com.victor.sudoPokemon.lobby;
 import br.com.victor.sudoPokemon.utils.ScannerAux;
 import br.com.victor.sudoPokemon.pokemon.Pokemon;
 import br.com.victor.sudoPokemon.pokemon.PokemonGenerator;
+import lombok.extern.java.Log;
 
 import java.util.List;
 import java.util.Optional;
@@ -68,5 +69,4 @@ public class SearchPokemon {
         System.out.println("------ Geração 1 ------");
         listaPokemons.get(0).forEach(p -> System.out.println(p.getName()));
     }
-
 }
