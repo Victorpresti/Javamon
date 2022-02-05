@@ -4,44 +4,46 @@ import br.com.victor.sudoPokemon.pokemon.Moves;
 import br.com.victor.sudoPokemon.pokemon.Pokemon;
 import br.com.victor.sudoPokemon.utils.ScannerAux;
 
+import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Turn {
 
     Attack attack = new Attack();
     int selectedNumber = 0;
-    StatusManager manager = new StatusManager();
+    StatusManager statusMan = new StatusManager();
+    SpeedManager speedMan = new SpeedManager();
 
     /*
     It manages the entire turn, from the battle menu until the results are posted
      */
     public void newTurn(Pokemon playerPokemon, Pokemon enemyPokemon){
         battleMenu(playerPokemon, enemyPokemon);
-        bothAttack(playerPokemon, enemyPokemon, playerPokemon.getMoves().get(selectedNumber - 1));
-        manager.postTurn(playerPokemon);
-        manager.postTurn(enemyPokemon);
+        LinkedHashMap<String, Pokemon> speedOrder = speedMan.checkSpeed(playerPokemon, enemyPokemon);
+        attackOrder(speedOrder, playerPokemon.getMoves().get(selectedNumber - 1));
+        statusMan.postTurn(playerPokemon);
+        statusMan.postTurn(enemyPokemon);
     }
 
     /*
-    Decides who'll attack first based on speed, also checks if the Pokemon actually has HP to attack
-    TODO Speed tie
+    Use the SpeedManager results to order the attacks, also checks if the Pokemon actually has HP to attack
      */
-    private void bothAttack(Pokemon playerPokemon, Pokemon enemyPokemon, Moves move){
-        if (playerPokemon.getCurrentStats().getSpeed() == enemyPokemon.getCurrentStats().getSpeed()){
-            double resultado = Math.round(((Math.random() * (100 - 1)) + 1) * 100.0) / 100.0;
-            if (resultado >= 50.0){
+    private void attackOrder(Map<String,Pokemon> speedOrder, Moves move){
 
-            }
-        }
-        else if (playerPokemon.getCurrentStats().getSpeed() > enemyPokemon.getCurrentStats().getSpeed()) {
-            attack.playerAttack(playerPokemon, enemyPokemon, move);
-            if(playerPokemon.getCurrentStats().getHitpoints() > 0 && enemyPokemon.getCurrentStats().getHitpoints() > 0){
-                attack.enemyAttack(enemyPokemon, playerPokemon);
+        List<Pokemon> pokemonOrder = new ArrayList<>(speedOrder.values());
+        Pokemon p1 = pokemonOrder.get(0);
+        Pokemon p2 = pokemonOrder.get(1);
+
+
+        if (speedOrder.keySet().stream().findFirst().get().equals("Player")) {
+            attack.playerAttack(p1, p2, move);
+            if(p1.getCurrentStats().getHitpoints() > 0 && p2.getCurrentStats().getHitpoints() > 0){
+                attack.enemyAttack(p2, p1);
             }
         } else {
-            attack.enemyAttack(enemyPokemon, playerPokemon);
-            if(playerPokemon.getCurrentStats().getHitpoints() > 0 && enemyPokemon.getCurrentStats().getHitpoints() > 0){
-                attack.playerAttack(playerPokemon, enemyPokemon, move);
+            attack.enemyAttack(p2, p1);
+            if(p1.getCurrentStats().getHitpoints() > 0 && p2.getCurrentStats().getHitpoints() > 0){
+                attack.playerAttack(p1, p2, move);
             }
         }
     }

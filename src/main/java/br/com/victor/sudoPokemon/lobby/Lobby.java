@@ -32,7 +32,6 @@ public class Lobby {
         a1c.changeLevel(50);
         b1c.changeLevel(50);
 
-
         a1c.addMoves(Arrays.asList(Moves.FIRE_BLAST, Moves.BLIZZARD, Moves.THUNDER, Moves.HYDRO_PUMP));
         b1c.addMoves(Arrays.asList(Moves.FIRE_BLAST, Moves.BLIZZARD, Moves.THUNDER, Moves.HYDRO_PUMP));
 
@@ -41,19 +40,22 @@ public class Lobby {
 
 
 
+    /*
+    Level the Pokemon
+     */
     public void levelPokemon(Pokemon player, Pokemon enemy){
-        System.out.println("Selecione o level do seu pokemon, entre 1 e 100");
+        System.out.println("Select your Pokemon's level, between 1 and 100.");
         int levelSelecionado = ScannerAux.scanInt();
         while (levelSelecionado < 1 || levelSelecionado > 100) {
-            System.out.println("O level do seu pokemon deve ser entre 1 e 100, tente novamente");
+            System.out.println("The choosen level must be between 1 and 100, try again.");
             levelSelecionado = ScannerAux.scanInt();
         }
         player.changeLevel(levelSelecionado);
 
-        System.out.println("Selecione o level do pokemon do seu oponente, entre 1 e 100");
+        System.out.println("Select your Pokemon's level, between 1 and 100.");
         levelSelecionado = ScannerAux.scanInt();
         while (levelSelecionado < 1 || levelSelecionado > 100) {
-            System.out.println("O level do seu pokemon deve ser entre 1 e 100, tente novamente");
+            System.out.println("The choosen level must be between 1 and 100, try again.");
             levelSelecionado = ScannerAux.scanInt();
         }
         enemy.changeLevel(levelSelecionado);

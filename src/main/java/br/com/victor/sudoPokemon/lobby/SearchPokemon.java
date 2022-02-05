@@ -17,7 +17,7 @@ public class SearchPokemon {
 
     public Pokemon pokemonSearch(){
         System.out.println();
-        System.out.println("Digite o nome do seu pokemon, digite help para obter a lista de pokemons disponíveis");
+        System.out.println("Choose your Pokemon by name, type help if you need assistance.");
         String pokemonSelecionado = ScannerAux.scanText();
 
         //devCheat
@@ -27,28 +27,10 @@ public class SearchPokemon {
 
         while (pokemonSelecionado.equals("help")) {
             pokemonList(pokemonList);
-            System.out.println("Digite o nome do seu pokemon, digite help para obter a lista de pokemons disponíveis");
+            System.out.println("Choose your Pokemon by name, type help if you need assistance.");
             pokemonSelecionado = ScannerAux.scanText();
         }
         return searchForName(pokemonList.get(0), pokemonSelecionado).get();
-
-    }
-
-    public Optional<Pokemon> searchForName(List<Pokemon> pokemons){
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Nome do seu Pokemon! ");
-        String nomePokemon = sc.next();
-
-        Optional<Pokemon> optional = pokemons.stream()
-                .filter(p -> p.getName().toLowerCase().equals(nomePokemon.toLowerCase()))
-                .findFirst();
-
-        if(optional.isPresent()){
-            System.out.println(nomePokemon + " encontrado");
-            return optional;
-        }
-        System.out.println(nomePokemon + " não encontrado, por favor tente novamente ");
-        return searchForName(pokemons);
     }
 
     public Optional<Pokemon> searchForName(List<Pokemon> pokemons, String nomePokemon){

@@ -3,6 +3,7 @@ package br.com.victor.sudoPokemon.fight;
 import br.com.victor.sudoPokemon.pokemon.Moves;
 import br.com.victor.sudoPokemon.pokemon.Pokemon;
 import br.com.victor.sudoPokemon.pokemon.Status;
+import br.com.victor.sudoPokemon.pokemon.Type;
 
 /*
 This class manages all status effects
@@ -36,14 +37,52 @@ public class StatusManager {
                 defender.getStatus() != Status.PARALYZED &&
                 defender.getStatus() != Status.BURNED &&
                 defender.getStatus() != Status.FROZEN) {
-            if (!isItImmune()){
+            if (!isItImmune(defender, move)) {
                 defender.setStatus(move.getEffect());
                 System.out.println(defender.getName() + move.getEffect().getMessageInflicted());
             }
 
         }
     }
-    private boolean isItImmune(){
+    private boolean isItImmune(Pokemon defender, Moves move) {
+        if (defender.getType().contains(Type.NORMAL)){
+            if (move.getName().contains("Body Slam")) return true;
+            return false;
+        }
+        if (defender.getType().contains(Type.FIRE)){
+            if (move.getEffect().equals(Status.BURNED)) return true;
+            return false;
+        }
+        if (defender.getType().contains(Type.ELECTRIC)){
+            if (move.getEffect().equals(Status.PARALYZED)) return true;
+            return false;
+        }
+        if (defender.getType().contains(Type.GRASS)){
+            if (move.getName().contains("Leech Seed") || move.getName().contains("Spore") || move.getName().contains("Powder")) return true;
+            return false;
+        }
+        if (defender.getType().contains(Type.POISON)){
+            if (move.getEffect().equals(Status.POISONED) || move.getEffect().equals(Status.BADLY_POISONED)) return true;
+            return false;
+        }
+        if (defender.getType().contains(Type.GROUND)){
+            if (move.getName().contains("Thunder Wave")) return true;
+            return false;
+        }
+        if (defender.getType().contains(Type.ROCK)){}
+
+        if (defender.getType().contains(Type.ICE)){
+            if (move.getName().contains("Sheer Cold") || move.getEffect().equals(Status.FROZEN)) return true;
+            return false;
+        }
+        if (defender.getType().contains(Type.GHOST)){}
+
+        if (defender.getType().contains(Type.DARK)){}
+
+        if (defender.getType().contains(Type.STEEL)){
+            if (move.getEffect().equals(Status.POISONED) || move.getEffect().equals(Status.BADLY_POISONED)) return true;
+            return false;
+        }
         return false;
     }
 
