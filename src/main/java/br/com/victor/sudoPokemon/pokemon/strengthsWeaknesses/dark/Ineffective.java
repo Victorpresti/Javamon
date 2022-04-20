@@ -9,6 +9,6 @@ import java.util.List;
 public class Ineffective {
 
     public List<Type> dark(){
-        return new ArrayList<Type>(Arrays.asList(Type.PSYCHIC));
+        return new ArrayList<>(Arrays.asList(Type.PSYCHIC));
     }
 }

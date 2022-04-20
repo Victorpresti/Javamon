@@ -8,11 +8,11 @@ import java.util.List;
 public class SuperStrengths {
 
     public List<Type> flying(){
-        return new ArrayList<Type>();
+        return new ArrayList<>();
     }
 
     public List<Type> flyingNormal(){
-        return new ArrayList<Type>();
+        return new ArrayList<>();
     }
 
 }

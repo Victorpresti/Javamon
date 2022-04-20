@@ -9,18 +9,18 @@ import java.util.List;
 public class SuperStrengths {
 
     public List<Type> bug(){
-        return new ArrayList<Type>();
+        return new ArrayList<>();
     }
 
     public List<Type> bugGrass(){
-        return new ArrayList<Type>(Arrays.asList(Type.GRASS, Type.GROUND));
+        return new ArrayList<>(Arrays.asList(Type.GRASS, Type.GROUND));
     }
 
     public List<Type> bugPoison(){
-        return new ArrayList<Type>(Arrays.asList(Type.GRASS, Type.FIGHTING));
+        return new ArrayList<>(Arrays.asList(Type.GRASS, Type.FIGHTING));
     }
 
     public List<Type> bugFlying(){
-        return new ArrayList<Type>(Arrays.asList(Type.GRASS, Type.FIGHTING));
+        return new ArrayList<>(Arrays.asList(Type.GRASS, Type.FIGHTING));
     }
 }

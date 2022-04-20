@@ -9,6 +9,6 @@ import java.util.List;
 public class Weaknesses {
 
     public List<Type> ground(){
-        return new ArrayList<Type>(Arrays.asList(Type.WATER, Type.GRASS, Type.ICE));
+        return new ArrayList<>(Arrays.asList(Type.WATER, Type.GRASS, Type.ICE));
     }
 }

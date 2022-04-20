@@ -9,14 +9,14 @@ import java.util.List;
 public class SuperStrengths {
 
     public List<Type> electric(){
-        return new ArrayList<Type>();
+        return new ArrayList<>();
     }
 
     public List<Type> electricFlying(){
-        return new ArrayList<Type>();
+        return new ArrayList<>();
     }
 
     public List<Type> electricSteel(){
-        return new ArrayList<Type>(Arrays.asList(Type.FLYING, Type.STEEL));
+        return new ArrayList<>(Arrays.asList(Type.FLYING, Type.STEEL));
     }
 }

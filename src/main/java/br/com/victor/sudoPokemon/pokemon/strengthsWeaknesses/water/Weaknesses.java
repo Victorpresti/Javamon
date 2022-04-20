@@ -9,27 +9,27 @@ import java.util.List;
 public class Weaknesses {
 
     public List<Type> water(){
-        return new ArrayList<Type>(Arrays.asList(Type.ELECTRIC, Type.GRASS));
+        return new ArrayList<>(Arrays.asList(Type.ELECTRIC, Type.GRASS));
     }
 
     public List<Type> waterFighting(){
-        return new ArrayList<Type>(Arrays.asList(Type.ELECTRIC, Type.GRASS, Type.FLYING, Type.PSYCHIC, Type.FAIRY));
+        return new ArrayList<>(Arrays.asList(Type.ELECTRIC, Type.GRASS, Type.FLYING, Type.PSYCHIC, Type.FAIRY));
     }
 
     public List<Type> waterFlying(){
-        return new ArrayList<Type>(Arrays.asList(Type.ROCK));
+        return new ArrayList<>(Arrays.asList(Type.ROCK));
     }
 
     public List<Type> waterIce(){
-        return new ArrayList<Type>(Arrays.asList(Type.ELECTRIC, Type.GRASS, Type.FIGHTING, Type.ROCK));
+        return new ArrayList<>(Arrays.asList(Type.ELECTRIC, Type.GRASS, Type.FIGHTING, Type.ROCK));
     }
 
 
     public List<Type> waterPoison(){
-        return new ArrayList<Type>(Arrays.asList(Type.ELECTRIC, Type.GROUND, Type.PSYCHIC));
+        return new ArrayList<>(Arrays.asList(Type.ELECTRIC, Type.GROUND, Type.PSYCHIC));
     }
 
     public List<Type> waterPsychic(){
-        return new ArrayList<Type>(Arrays.asList(Type.ELECTRIC, Type.GRASS, Type.BUG, Type.GHOST, Type.DARK));
+        return new ArrayList<>(Arrays.asList(Type.ELECTRIC, Type.GRASS, Type.BUG, Type.GHOST, Type.DARK));
     }
 }

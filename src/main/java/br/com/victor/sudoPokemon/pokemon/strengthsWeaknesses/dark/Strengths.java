@@ -9,6 +9,6 @@ import java.util.List;
 public class Strengths {
 
     public List<Type> dark(){
-        return new ArrayList<Type>(Arrays.asList(Type.GHOST, Type.DARK));
+        return new ArrayList<>(Arrays.asList(Type.GHOST, Type.DARK));
     }
 }

@@ -9,14 +9,14 @@ import java.util.List;
 public class Weaknesses {
 
     public List<Type> ice(){
-        return new ArrayList<Type>(Arrays.asList(Type.FIRE, Type.FIGHTING, Type.ROCK, Type.STEEL));
+        return new ArrayList<>(Arrays.asList(Type.FIRE, Type.FIGHTING, Type.ROCK, Type.STEEL));
     }
 
     public List<Type> iceFlying(){
-        return new ArrayList<Type>(Arrays.asList(Type.FIRE, Type.ELECTRIC, Type.STEEL));
+        return new ArrayList<>(Arrays.asList(Type.FIRE, Type.ELECTRIC, Type.STEEL));
     }
 
     public List<Type> icePsychic(){
-        return new ArrayList<Type>(Arrays.asList(Type.FIRE, Type.BUG, Type.ROCK, Type.GHOST, Type.DARK, Type.STEEL));
+        return new ArrayList<>(Arrays.asList(Type.FIRE, Type.BUG, Type.ROCK, Type.GHOST, Type.DARK, Type.STEEL));
     }
 }

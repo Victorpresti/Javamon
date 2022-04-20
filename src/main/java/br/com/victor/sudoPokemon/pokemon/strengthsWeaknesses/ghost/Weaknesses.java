@@ -9,10 +9,10 @@ import java.util.List;
 public class Weaknesses {
 
     public List<Type> ghost(){
-        return new ArrayList<Type>(Arrays.asList(Type.GHOST, Type.DARK));
+        return new ArrayList<>(Arrays.asList(Type.GHOST, Type.DARK));
     }
 
     public List<Type> ghostPoison(){
-        return new ArrayList<Type>(Arrays.asList(Type.GROUND, Type.PSYCHIC, Type.GHOST, Type.DARK));
+        return new ArrayList<>(Arrays.asList(Type.GROUND, Type.PSYCHIC, Type.GHOST, Type.DARK));
     }
 }

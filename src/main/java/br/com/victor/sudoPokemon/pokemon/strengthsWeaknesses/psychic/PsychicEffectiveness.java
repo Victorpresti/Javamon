@@ -7,12 +7,12 @@ import java.util.List;
 
 public class PsychicEffectiveness {
 
-    List<List<Type>> compiledEffectiveness = new ArrayList<>();
-    Strengths strengths = new Strengths();
-    SuperStrengths superStrengths = new SuperStrengths();
-    SuperWeaknesses superWeaknesses = new SuperWeaknesses();
-    Weaknesses weaknesses = new Weaknesses();
-    Ineffective ineffective = new Ineffective();
+    final List<List<Type>> compiledEffectiveness = new ArrayList<>();
+    final Strengths strengths = new Strengths();
+    final SuperStrengths superStrengths = new SuperStrengths();
+    final SuperWeaknesses superWeaknesses = new SuperWeaknesses();
+    final Weaknesses weaknesses = new Weaknesses();
+    final Ineffective ineffective = new Ineffective();
 
     public List<List<Type>> psychic(){
         compiledEffectiveness.add(strengths.psychic());

@@ -9,14 +9,14 @@ import java.util.List;
 public class SuperStrengths {
 
     public List<Type> poison(){
-        return new ArrayList<Type>();
+        return new ArrayList<>();
     }
 
     public List<Type> poisonGround(){
-        return new ArrayList<Type>(Arrays.asList(Type.POISON));
+        return new ArrayList<>(Arrays.asList(Type.POISON));
     }
 
     public List<Type> poisonFlying(){
-        return new ArrayList<Type>(Arrays.asList(Type.GRASS, Type.FIGHTING, Type.BUG));
+        return new ArrayList<>(Arrays.asList(Type.GRASS, Type.FIGHTING, Type.BUG));
     }
 }

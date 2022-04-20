@@ -9,6 +9,6 @@ import java.util.List;
 public class Ineffective {
 
     public List<Type> steel(){
-        return new ArrayList<Type>(Arrays.asList(Type.POISON));
+        return new ArrayList<>(Arrays.asList(Type.POISON));
     }
 }

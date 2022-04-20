@@ -9,6 +9,6 @@ import java.util.List;
 public class Ineffective {
 
     public List<Type> fairy(){
-        return new ArrayList<Type>(Arrays.asList(Type.DRAGON));
+        return new ArrayList<>(Arrays.asList(Type.DRAGON));
     }
 }

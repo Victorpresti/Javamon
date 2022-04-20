@@ -8,14 +8,14 @@ import java.util.List;
 public class Ineffective {
 
     public List<Type> grass(){
-        return new ArrayList<Type>();
+        return new ArrayList<>();
     }
 
     public List<Type> grassPoison(){
-        return new ArrayList<Type>();
+        return new ArrayList<>();
     }
 
     public List<Type> grassPsychic(){
-        return new ArrayList<Type>();
+        return new ArrayList<>();
     }
 }

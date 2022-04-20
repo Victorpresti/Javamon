@@ -9,18 +9,18 @@ import java.util.List;
 public class SuperStrengths {
 
     public List<Type> rock(){
-        return new ArrayList<Type>();
+        return new ArrayList<>();
     }
 
     public List<Type> rockWater(){
-        return new ArrayList<Type>(Arrays.asList(Type.FIRE));
+        return new ArrayList<>(Arrays.asList(Type.FIRE));
     }
 
     public List<Type> rockGround(){
-        return new ArrayList<Type>(Arrays.asList(Type.POISON));
+        return new ArrayList<>(Arrays.asList(Type.POISON));
     }
 
     public List<Type> rockFlying(){
-        return new ArrayList<Type>();
+        return new ArrayList<>();
     }
 }

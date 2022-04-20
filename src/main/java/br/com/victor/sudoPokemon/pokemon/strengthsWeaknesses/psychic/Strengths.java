@@ -9,10 +9,10 @@ import java.util.List;
 public class Strengths {
 
     public List<Type> psychic(){
-        return new ArrayList<Type>(Arrays.asList(Type.FIGHTING, Type.PSYCHIC));
+        return new ArrayList<>(Arrays.asList(Type.FIGHTING, Type.PSYCHIC));
     }
 
     public List<Type> psychicFairy(){
-        return new ArrayList<Type>(Arrays.asList(Type.PSYCHIC));
+        return new ArrayList<>(Arrays.asList(Type.PSYCHIC));
     }
 }

@@ -1,19 +1,17 @@
 package br.com.victor.sudoPokemon.lobby;
 
-import br.com.victor.sudoPokemon.utils.ScannerAux;
 import br.com.victor.sudoPokemon.pokemon.Pokemon;
 import br.com.victor.sudoPokemon.pokemon.PokemonGenerator;
-import lombok.extern.java.Log;
+import br.com.victor.sudoPokemon.utils.ScannerAux;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.Scanner;
 
 public class SearchPokemon {
 
-    PokemonGenerator pg = new PokemonGenerator();
-    List<List<Pokemon>> pokemonList = pg.generatePokemon(1);
-    List<Pokemon> genOne = pokemonList.get(0);
+    final PokemonGenerator pg = new PokemonGenerator();
+    final List<List<Pokemon>> pokemonList = pg.generatePokemon(1);
+    final List<Pokemon> genOne = pokemonList.get(0);
 
     public Pokemon pokemonSearch(){
         System.out.println();
@@ -36,7 +34,7 @@ public class SearchPokemon {
     public Optional<Pokemon> searchForName(List<Pokemon> pokemons, String nomePokemon){
 
         Optional<Pokemon> optional = pokemons.stream()
-                .filter(p -> p.getName().toLowerCase().equals(nomePokemon.toLowerCase()))
+                .filter(p -> p.getName().equalsIgnoreCase(nomePokemon))
                 .findFirst();
 
         if(optional.isPresent()){

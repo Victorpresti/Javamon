@@ -9,14 +9,14 @@ import java.util.List;
 public class Strengths {
 
     public List<Type> ice(){
-        return new ArrayList<Type>(Arrays.asList(Type.ICE));
+        return new ArrayList<>(Arrays.asList(Type.ICE));
     }
 
     public List<Type> iceFlying(){
-        return new ArrayList<Type>(Arrays.asList(Type.GRASS, Type.BUG));
+        return new ArrayList<>(Arrays.asList(Type.GRASS, Type.BUG));
     }
 
     public List<Type> icePsychic(){
-        return new ArrayList<Type>(Arrays.asList(Type.ICE, Type.PSYCHIC));
+        return new ArrayList<>(Arrays.asList(Type.ICE, Type.PSYCHIC));
     }
 }

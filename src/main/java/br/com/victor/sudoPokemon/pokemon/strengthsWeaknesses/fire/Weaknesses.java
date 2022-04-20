@@ -9,10 +9,10 @@ import java.util.List;
 public class Weaknesses {
 
     public List<Type> fire(){
-        return new ArrayList<Type>(Arrays.asList(Type.WATER, Type.GROUND, Type.ROCK));
+        return new ArrayList<>(Arrays.asList(Type.WATER, Type.GROUND, Type.ROCK));
     }
 
     public List<Type> fireFlying(){
-        return new ArrayList<Type>(Arrays.asList(Type.WATER, Type.ELECTRIC));
+        return new ArrayList<>(Arrays.asList(Type.WATER, Type.ELECTRIC));
     }
 }

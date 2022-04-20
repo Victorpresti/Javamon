@@ -1,17 +1,17 @@
 package br.com.victor.sudoPokemon.fight;
 
+import br.com.victor.sudoPokemon.lobby.Lobby;
 import br.com.victor.sudoPokemon.pokemon.Pokemon;
 import br.com.victor.sudoPokemon.pokemon.Status;
-import br.com.victor.sudoPokemon.lobby.Lobby;
 
 import java.util.Scanner;
 
 public class Battle {
 
     private int turnCount = 1;
-    String newLine = System.getProperty("line.separator");
-    Scanner sc= new Scanner(System.in);
-    Turn turn = new Turn();
+    final String newLine = System.getProperty("line.separator");
+    final Scanner sc= new Scanner(System.in);
+    final Turn turn = new Turn();
 
     public void pokemonBattle(Pokemon playerPokemon, Pokemon enemyPokemon){
         announce(playerPokemon, enemyPokemon);

@@ -19,27 +19,26 @@ public class TeamManagerTest {
 
     @Test
     void testAdd(){
-        List<Pokemon> team = new ArrayList<Pokemon>();
-        Assertions.assertTrue(team.isEmpty());
+        List<Pokemon> team = new ArrayList<>();
         tm.add(new Pokemon(), team);
         Assertions.assertFalse(team.isEmpty());
     }
 
     @Test
     void testAddUpTo6(){
-        List<Pokemon> team = new ArrayList<Pokemon>();
+        List<Pokemon> team = new ArrayList<>();
         tm.add(new Pokemon(), team);
         tm.add(new Pokemon(), team);
         tm.add(new Pokemon(), team);
         tm.add(new Pokemon(), team);
         tm.add(new Pokemon(), team);
         tm.add(new Pokemon(), team);
-        Assertions.assertTrue(team.size() == 6);
+        Assertions.assertEquals(6, team.size());
     }
 
     @Test
     void testAddLimit(){
-        List<Pokemon> team = new ArrayList<Pokemon>();
+        List<Pokemon> team = new ArrayList<>();
         tm.add(new Pokemon(), team);
         tm.add(new Pokemon(), team);
         tm.add(new Pokemon(), team);
@@ -47,29 +46,29 @@ public class TeamManagerTest {
         tm.add(new Pokemon(), team);
         tm.add(new Pokemon(), team);
         tm.add(new Pokemon(), team);
-        Assertions.assertTrue(team.size() == 6);
+        Assertions.assertEquals(6, team.size());
     }
 
     @Test
     void testRemove(){
-        List<Pokemon> team = new ArrayList<Pokemon>();
+        List<Pokemon> team = new ArrayList<>();
         Pokemon p1 = new Pokemon();
         Pokemon p2 = new Pokemon();
         tm.add(p1, team);
         tm.add(p2, team);
-        Assertions.assertTrue(team.size() == 2);
+        Assertions.assertEquals(2, team.size());
         tm.remove(p1, team);
-        Assertions.assertTrue(team.size() == 1);
+        Assertions.assertEquals(1, team.size());
     }
 
     @Test
     void testTryingToRemoveOnlyPokemon(){
-        List<Pokemon> team = new ArrayList<Pokemon>();
+        List<Pokemon> team = new ArrayList<>();
         Pokemon p1 = new Pokemon();
         tm.add(p1, team);
-        Assertions.assertTrue(team.size() == 1);
+        Assertions.assertEquals(1, team.size());
         tm.remove(p1, team);
-        Assertions.assertTrue(team.size() == 1);
+        Assertions.assertEquals(1, team.size());
         Assertions.assertTrue(team.contains(p1));
     }
 }

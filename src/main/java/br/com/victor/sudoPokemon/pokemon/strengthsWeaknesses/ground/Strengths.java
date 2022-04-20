@@ -9,6 +9,6 @@ import java.util.List;
 public class Strengths {
 
     public List<Type> ground(){
-        return new ArrayList<Type>(Arrays.asList(Type.POISON, Type.ROCK));
+        return new ArrayList<>(Arrays.asList(Type.POISON, Type.ROCK));
     }
 }

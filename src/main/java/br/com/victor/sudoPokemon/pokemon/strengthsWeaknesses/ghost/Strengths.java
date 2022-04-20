@@ -9,11 +9,11 @@ import java.util.List;
 public class Strengths {
 
     public List<Type> ghost(){
-        return new ArrayList<Type>(Arrays.asList(Type.POISON, Type.BUG));
+        return new ArrayList<>(Arrays.asList(Type.POISON, Type.BUG));
     }
 
     public List<Type> ghostPoison(){
-        return new ArrayList<Type>(Arrays.asList(Type.GRASS, Type.FAIRY));
+        return new ArrayList<>(Arrays.asList(Type.GRASS, Type.FAIRY));
     }
 
 }

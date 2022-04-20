@@ -9,6 +9,6 @@ import java.util.List;
 public class Strengths {
 
     public List<Type> steel(){
-        return new ArrayList<Type>(Arrays.asList(Type.NORMAL, Type.GRASS, Type.ICE, Type.FLYING, Type.PSYCHIC, Type.BUG, Type.ROCK, Type.DRAGON, Type.STEEL, Type.FAIRY));
+        return new ArrayList<>(Arrays.asList(Type.NORMAL, Type.GRASS, Type.ICE, Type.FLYING, Type.PSYCHIC, Type.BUG, Type.ROCK, Type.DRAGON, Type.STEEL, Type.FAIRY));
     }
 }

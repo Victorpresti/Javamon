@@ -8,10 +8,10 @@ import java.util.List;
 public class SuperWeaknesses {
 
     public List<Type> normal(){
-        return new ArrayList<Type>();
+        return new ArrayList<>();
     }
 
     public List<Type> normalFairy(){
-        return new ArrayList<Type>();
+        return new ArrayList<>();
     }
 }

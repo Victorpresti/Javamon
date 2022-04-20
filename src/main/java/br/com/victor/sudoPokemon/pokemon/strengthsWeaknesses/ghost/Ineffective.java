@@ -9,10 +9,10 @@ import java.util.List;
 public class Ineffective {
 
     public List<Type> ghost(){
-        return new ArrayList<Type>(Arrays.asList(Type.NORMAL, Type.FIGHTING));
+        return new ArrayList<>(Arrays.asList(Type.NORMAL, Type.FIGHTING));
     }
 
     public List<Type> ghostPoison(){
-        return new ArrayList<Type>(Arrays.asList(Type.NORMAL, Type.FIGHTING));
+        return new ArrayList<>(Arrays.asList(Type.NORMAL, Type.FIGHTING));
     }
 }

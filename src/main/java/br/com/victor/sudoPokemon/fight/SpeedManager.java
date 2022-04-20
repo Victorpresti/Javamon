@@ -2,11 +2,11 @@ package br.com.victor.sudoPokemon.fight;
 
 import br.com.victor.sudoPokemon.pokemon.Pokemon;
 
-import java.util.*;
+import java.util.LinkedHashMap;
 
 public class SpeedManager {
 
-    LinkedHashMap<String, Pokemon> speedResult = new LinkedHashMap<>();
+    final LinkedHashMap<String, Pokemon> speedResult = new LinkedHashMap<>();
 
     public LinkedHashMap<String, Pokemon> checkSpeed(Pokemon p1, Pokemon p2) {
         if (p1.getCurrentStats().getSpeed() == p2.getCurrentStats().getSpeed()) return speedTie(p1, p2);
@@ -31,8 +31,8 @@ public class SpeedManager {
             speedResult.put("Enemy", p2);
             return speedResult;
         } else {
-            speedResult.put("Player", p1);
-            speedResult.put("Enemy", p2);
+            speedResult.put("Enemy", p1);
+            speedResult.put("Player", p2);
             return speedResult;
         }
     }

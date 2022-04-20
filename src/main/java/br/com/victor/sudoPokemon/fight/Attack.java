@@ -10,9 +10,9 @@ This class manages everything related to attacking the opposing Pokemon
  */
 public class Attack {
 
-    DamageHandler dh = new DamageHandler();
-    Random rand = new Random();
-    StatusManager statusManager = new StatusManager();
+    final DamageHandler dh = new DamageHandler();
+    final Random rand = new Random();
+    final StatusManager statusManager = new StatusManager();
 
     public void playerAttack(Pokemon attacker, Pokemon defender, Moves selectedMove){
         System.out.println("----- Player Attack -----");

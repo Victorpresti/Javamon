@@ -9,6 +9,6 @@ import java.util.List;
 public class Ineffective {
 
     public List<Type> ground(){
-        return new ArrayList<Type>(Arrays.asList(Type.ELECTRIC));
+        return new ArrayList<>(Arrays.asList(Type.ELECTRIC));
     }
 }

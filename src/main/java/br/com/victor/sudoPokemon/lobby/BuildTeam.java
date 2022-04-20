@@ -2,8 +2,6 @@ package br.com.victor.sudoPokemon.lobby;
 
 import br.com.victor.sudoPokemon.utils.ScannerAux;
 
-import java.util.Scanner;
-
 public class BuildTeam {
 
     public void teamBuilder(){

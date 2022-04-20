@@ -4,23 +4,38 @@ import br.com.victor.sudoPokemon.pokemon.Moves;
 import br.com.victor.sudoPokemon.pokemon.Pokemon;
 import br.com.victor.sudoPokemon.utils.ScannerAux;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Turn {
 
-    Attack attack = new Attack();
+    final Attack attack = new Attack();
     int selectedNumber = 0;
-    StatusManager statusMan = new StatusManager();
-    SpeedManager speedMan = new SpeedManager();
+    final StatusManager statusMan = new StatusManager();
+    final SpeedManager speedMan = new SpeedManager();
 
     /*
     It manages the entire turn, from the battle menu until the results are posted
      */
     public void newTurn(Pokemon playerPokemon, Pokemon enemyPokemon){
+        /*
+        The battle menu, where the player will select it's action
+         */
         battleMenu(playerPokemon, enemyPokemon);
+        /*
+        Calculate who is first based on Speed
+         */
         LinkedHashMap<String, Pokemon> speedOrder = speedMan.checkSpeed(playerPokemon, enemyPokemon);
+        /*
+        Order the attack based on the previous speed test result
+         */
         attackOrder(speedOrder, playerPokemon.getMoves().get(selectedNumber - 1));
+        /*
+        Post turn effects
+         */
         statusMan.postTurn(playerPokemon);
         statusMan.postTurn(enemyPokemon);
     }
@@ -33,7 +48,6 @@ public class Turn {
         List<Pokemon> pokemonOrder = new ArrayList<>(speedOrder.values());
         Pokemon p1 = pokemonOrder.get(0);
         Pokemon p2 = pokemonOrder.get(1);
-
 
         if (speedOrder.keySet().stream().findFirst().get().equals("Player")) {
             attack.playerAttack(p1, p2, move);
@@ -72,7 +86,6 @@ public class Turn {
 
     /*
     This method controls the action menu, where you'll select between Fighting, changing Pokemon, using your Items or Running
-    TODO Item and Run
      */
     private int actionSelecter(){
         int action = 0;

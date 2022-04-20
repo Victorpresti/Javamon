@@ -9,18 +9,18 @@ import java.util.List;
 public class SuperWeaknesses {
 
     public List<Type> rock(){
-        return new ArrayList<Type>();
+        return new ArrayList<>();
     }
 
     public List<Type> rockWater(){
-        return new ArrayList<Type>(Arrays.asList(Type.GRASS));
+        return new ArrayList<>(Arrays.asList(Type.GRASS));
     }
 
     public List<Type> rockGround(){
-        return new ArrayList<Type>(Arrays.asList(Type.WATER, Type.GRASS));
+        return new ArrayList<>(Arrays.asList(Type.WATER, Type.GRASS));
     }
 
     public List<Type> rockFlying(){
-        return new ArrayList<Type>();
+        return new ArrayList<>();
     }
 }

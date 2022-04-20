@@ -9,10 +9,10 @@ import java.util.List;
 public class Ineffective {
 
     public List<Type> normal(){
-        return new ArrayList<Type>(Arrays.asList(Type.GHOST));
+        return new ArrayList<>(Arrays.asList(Type.GHOST));
     }
 
     public List<Type> normalFairy(){
-        return new ArrayList<Type>(Arrays.asList(Type.GHOST, Type.DRAGON));
+        return new ArrayList<>(Arrays.asList(Type.GHOST, Type.DRAGON));
     }
 }

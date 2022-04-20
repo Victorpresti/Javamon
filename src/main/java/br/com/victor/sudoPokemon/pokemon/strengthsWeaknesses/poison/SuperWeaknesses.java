@@ -8,14 +8,14 @@ import java.util.List;
 public class SuperWeaknesses {
 
     public List<Type> poison(){
-        return new ArrayList<Type>();
+        return new ArrayList<>();
     }
 
     public List<Type> poisonGround(){
-        return new ArrayList<Type>();
+        return new ArrayList<>();
     }
 
     public List<Type> poisonFlying(){
-        return new ArrayList<Type>();
+        return new ArrayList<>();
     }
 }

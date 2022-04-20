@@ -8,14 +8,14 @@ import java.util.List;
 public class SuperStrengths {
 
     public List<Type> ice(){
-        return new ArrayList<Type>();
+        return new ArrayList<>();
     }
 
     public List<Type> iceFlying(){
-        return new ArrayList<Type>();
+        return new ArrayList<>();
     }
 
     public List<Type> icePsychic(){
-        return new ArrayList<Type>();
+        return new ArrayList<>();
     }
 }

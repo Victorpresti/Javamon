@@ -8,19 +8,19 @@ import java.util.List;
 public class Ineffective {
 
     public List<Type> bug(){
-        return new ArrayList<Type>();
+        return new ArrayList<>();
     }
 
     public List<Type> bugGrass(){
-        return new ArrayList<Type>();
+        return new ArrayList<>();
     }
 
     public List<Type> bugPoison(){
-        return new ArrayList<Type>();
+        return new ArrayList<>();
     }
 
     public List<Type> bugFlying(){
-        return new ArrayList<Type>();
+        return new ArrayList<>();
     }
 
 

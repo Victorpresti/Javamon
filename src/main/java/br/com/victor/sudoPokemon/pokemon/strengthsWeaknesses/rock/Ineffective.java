@@ -9,18 +9,18 @@ import java.util.List;
 public class Ineffective {
 
     public List<Type> rock(){
-        return new ArrayList<Type>();
+        return new ArrayList<>();
     }
 
     public List<Type> rockWater(){
-        return new ArrayList<Type>();
+        return new ArrayList<>();
     }
 
     public List<Type> rockGround(){
-        return new ArrayList<Type>(Arrays.asList(Type.ELECTRIC));
+        return new ArrayList<>(Arrays.asList(Type.ELECTRIC));
     }
 
     public List<Type> rockFlying(){
-        return new ArrayList<Type>(Arrays.asList(Type.GROUND));
+        return new ArrayList<>(Arrays.asList(Type.GROUND));
     }
 }

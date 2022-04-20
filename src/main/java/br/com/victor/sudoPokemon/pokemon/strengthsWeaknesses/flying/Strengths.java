@@ -9,10 +9,10 @@ import java.util.List;
 public class Strengths {
 
     public List<Type> flying(){
-        return new ArrayList<Type>(Arrays.asList(Type.GRASS, Type.FIGHTING, Type.BUG));
+        return new ArrayList<>(Arrays.asList(Type.GRASS, Type.FIGHTING, Type.BUG));
     }
 
     public List<Type> flyingNormal(){
-        return new ArrayList<Type>(Arrays.asList(Type.GRASS, Type.BUG));
+        return new ArrayList<>(Arrays.asList(Type.GRASS, Type.BUG));
     }
 }

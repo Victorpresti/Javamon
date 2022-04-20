@@ -9,14 +9,14 @@ import java.util.List;
 public class Ineffective {
 
     public List<Type> electric(){
-        return new ArrayList<Type>();
+        return new ArrayList<>();
     }
 
     public List<Type> electricFlying(){
-        return new ArrayList<Type>(Arrays.asList(Type.GROUND));
+        return new ArrayList<>(Arrays.asList(Type.GROUND));
     }
 
     public List<Type> electricSteel(){
-        return new ArrayList<Type>(Arrays.asList(Type.POISON));
+        return new ArrayList<>(Arrays.asList(Type.POISON));
     }
 }

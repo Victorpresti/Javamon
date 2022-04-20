@@ -9,10 +9,10 @@ import java.util.List;
 public class SuperWeaknesses {
 
     public List<Type> dragon(){
-        return new ArrayList<Type>();
+        return new ArrayList<>();
     }
 
     public List<Type> dragonFlying(){
-        return new ArrayList<Type>(Arrays.asList(Type.ICE));
+        return new ArrayList<>(Arrays.asList(Type.ICE));
     }
 }

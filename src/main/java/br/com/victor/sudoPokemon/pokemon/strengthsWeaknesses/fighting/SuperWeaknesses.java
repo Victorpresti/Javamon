@@ -8,6 +8,6 @@ import java.util.List;
 public class SuperWeaknesses {
 
     public List<Type> fighting(){
-        return new ArrayList<Type>();
+        return new ArrayList<>();
     }
 }

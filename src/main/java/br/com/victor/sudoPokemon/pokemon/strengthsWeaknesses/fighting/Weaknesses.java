@@ -9,6 +9,6 @@ import java.util.List;
 public class Weaknesses {
 
     public List<Type> fighting(){
-        return new ArrayList<Type>(Arrays.asList(Type.FLYING, Type.PSYCHIC, Type.FAIRY));
+        return new ArrayList<>(Arrays.asList(Type.FLYING, Type.PSYCHIC, Type.FAIRY));
     }
 }

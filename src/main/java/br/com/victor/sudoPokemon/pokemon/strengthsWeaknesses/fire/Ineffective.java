@@ -9,10 +9,10 @@ import java.util.List;
 public class Ineffective {
 
     public List<Type> fire(){
-        return new ArrayList<Type>();
+        return new ArrayList<>();
     }
 
     public List<Type> fireFlying(){
-        return new ArrayList<Type>(Arrays.asList(Type.GROUND));
+        return new ArrayList<>(Arrays.asList(Type.GROUND));
     }
 }

@@ -1,16 +1,16 @@
 package br.com.victor.sudoPokemon.lobby;
 
-import br.com.victor.sudoPokemon.utils.ScannerAux;
+import br.com.victor.sudoPokemon.fight.Battle;
 import br.com.victor.sudoPokemon.pokemon.Moves;
 import br.com.victor.sudoPokemon.pokemon.Pokemon;
-import br.com.victor.sudoPokemon.fight.Battle;
+import br.com.victor.sudoPokemon.utils.ScannerAux;
 
 import java.util.Arrays;
 
 public class Lobby {
 
-    SearchPokemon sp = new SearchPokemon();
-    Battle bt = new Battle();
+    final SearchPokemon sp = new SearchPokemon();
+    final Battle bt = new Battle();
 
     public void lobby() {
 
@@ -21,20 +21,33 @@ public class Lobby {
         //Build your team
         //new BuildTeam().teamBuilder();
 
-        //Choosing your Pokemon
+        /*
+        Player chooses it's Pokemon
+         */
         Pokemon a1 = sp.pokemonSearch();
         Pokemon a1c = a1.clone(a1);
 
-        //Opponent Pokemon
+        /*
+        Player chooses the opponent's Pokemon
+         */
         Pokemon b1 = sp.pokemonSearch();
         Pokemon b1c = b1.clone(b1);
 
+        /*
+        Changing level
+         */
         a1c.changeLevel(50);
         b1c.changeLevel(50);
 
+        /*
+        Adding moves
+         */
         a1c.addMoves(Arrays.asList(Moves.FIRE_BLAST, Moves.BLIZZARD, Moves.THUNDER, Moves.HYDRO_PUMP));
         b1c.addMoves(Arrays.asList(Moves.FIRE_BLAST, Moves.BLIZZARD, Moves.THUNDER, Moves.HYDRO_PUMP));
 
+        /*
+        Battle!
+         */
         bt.pokemonBattle(a1c, b1c);
     }
 

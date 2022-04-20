@@ -7,12 +7,12 @@ import java.util.List;
 
 public class DarkEffectiveness {
 
-    List<List<Type>> compiledEffectiveness = new ArrayList<>();
-    Strengths strengths = new Strengths();
-    SuperStrengths superStrengths = new SuperStrengths();
-    SuperWeaknesses superWeaknesses = new SuperWeaknesses();
-    Ineffective ineffective = new Ineffective();
-    Weaknesses weaknesses = new Weaknesses();
+    final List<List<Type>> compiledEffectiveness = new ArrayList<>();
+    final Strengths strengths = new Strengths();
+    final SuperStrengths superStrengths = new SuperStrengths();
+    final SuperWeaknesses superWeaknesses = new SuperWeaknesses();
+    final Ineffective ineffective = new Ineffective();
+    final Weaknesses weaknesses = new Weaknesses();
 
     public List<List<Type>> dark(){
         compiledEffectiveness.add(strengths.dark());

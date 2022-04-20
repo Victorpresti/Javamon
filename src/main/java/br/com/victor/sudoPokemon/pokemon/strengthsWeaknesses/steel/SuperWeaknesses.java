@@ -8,6 +8,6 @@ import java.util.List;
 public class SuperWeaknesses {
 
     public List<Type> steel(){
-        return new ArrayList<Type>();
+        return new ArrayList<>();
     }
 }

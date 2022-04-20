@@ -8,6 +8,6 @@ import java.util.List;
 public class SuperStrengths {
 
     public List<Type> ground(){
-        return new ArrayList<Type>();
+        return new ArrayList<>();
     }
 }
