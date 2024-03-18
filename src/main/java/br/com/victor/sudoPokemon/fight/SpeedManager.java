@@ -17,12 +17,11 @@ public class SpeedManager {
         if (Math.round(((Math.random() * (100 - 1)) + 1) * 100.0) / 100.0 >= 50.0) {
             speedResult.put("Player", p1);
             speedResult.put("Enemy", p2);
-            return speedResult;
         } else {
             speedResult.put("Enemy", p1);
             speedResult.put("Player", p2);
-            return speedResult;
         }
+        return speedResult;
     }
 
     private LinkedHashMap<String, Pokemon> speedCheck(Pokemon p1, Pokemon p2) {

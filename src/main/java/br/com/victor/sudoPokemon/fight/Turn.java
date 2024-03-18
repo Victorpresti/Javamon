@@ -1,5 +1,6 @@
 package br.com.victor.sudoPokemon.fight;
 
+import br.com.victor.sudoPokemon.player.Player;
 import br.com.victor.sudoPokemon.pokemon.Moves;
 import br.com.victor.sudoPokemon.pokemon.Pokemon;
 import br.com.victor.sudoPokemon.utils.ScannerAux;
@@ -20,15 +21,15 @@ public class Turn {
     /*
     It manages the entire turn, from the battle menu until the results are posted
      */
-    public void newTurn(Pokemon playerPokemon, Pokemon enemyPokemon){
+    public void newTurn(Player playerOne, Player playerTwo){
         /*
         The battle menu, where the player will select it's action
          */
-        battleMenu(playerPokemon, enemyPokemon);
+        battleMenu(playerOne, playerTwo);
         /*
         Calculate who is first based on Speed
          */
-        LinkedHashMap<String, Pokemon> speedOrder = speedMan.checkSpeed(playerPokemon, enemyPokemon);
+        LinkedHashMap<String, Pokemon> speedOrder = speedMan.checkSpeed(playerOne, playerTwo);
         /*
         Order the attack based on the previous speed test result
          */
@@ -36,8 +37,8 @@ public class Turn {
         /*
         Post turn effects
          */
-        statusMan.postTurn(playerPokemon);
-        statusMan.postTurn(enemyPokemon);
+        statusMan.postTurn(playerOne);
+        statusMan.postTurn(playerTwo);
     }
 
     /*
@@ -65,14 +66,14 @@ public class Turn {
     /*
     This class controls the selection of moves, displaying them in a menu
      */
-    private void moveSelector(Pokemon playerPokemon, Pokemon enemyPokemon){
+    private void moveSelector(Player playerOne, Player playerTwo){
 
         AtomicInteger moveCounter = new AtomicInteger(1);
         AtomicInteger movePoolCounter = new AtomicInteger(0);
 
         System.out.println("Select a move, 0 goes back to the previous menu:");
-        playerPokemon.getMoves().forEach(move -> {
-            System.out.println("(" + moveCounter + ")" + playerPokemon.getMoves().get(Integer.parseInt(String.valueOf(movePoolCounter))).getName());
+        playerOne.getCurrentPokemon().getMoves().forEach(move -> {
+            System.out.println("(" + moveCounter + ")" + playerOne.getCurrentPokemon().getMoves().get(Integer.parseInt(String.valueOf(movePoolCounter))).getName());
             movePoolCounter.getAndIncrement();
             moveCounter.getAndIncrement();
         });
@@ -80,7 +81,7 @@ public class Turn {
         selectedNumber = ScannerAux.scanInt();
 
         if (selectedNumber == 0){
-            battleMenu(playerPokemon, enemyPokemon);
+            battleMenu(playerOne, playerTwo);
         }
     }
 
@@ -106,25 +107,25 @@ public class Turn {
     Private implementation of the Action Selector
     TODO Case 2, 3 and 4.
      */
-    private void battleMenu(Pokemon playerPokemon, Pokemon enemyPokemon){
+    private void battleMenu(Player playerOne, Player playerTwo){
         switch(actionSelecter()){
             case 1:
-                moveSelector(playerPokemon, enemyPokemon);
+                moveSelector(playerOne, playerTwo);
                 break;
             case 2:
                 System.out.println("TODO");
                 System.out.println("Back to the menu");
-                battleMenu(playerPokemon, enemyPokemon);
+                battleMenu(playerOne, playerTwo);
                 break;
             case 3:
                 System.out.println("TODO");
                 System.out.println("Back to the menu");
-                battleMenu(playerPokemon, enemyPokemon);
+                battleMenu(playerOne, playerTwo);
                 break;
             case 4:
                 System.out.println("TODO");
                 System.out.println("Back to the menu");
-                battleMenu(playerPokemon, enemyPokemon);
+                battleMenu(playerOne, playerTwo);
                 break;
         }
     }

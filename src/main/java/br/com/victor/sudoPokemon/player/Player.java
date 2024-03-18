@@ -12,13 +12,8 @@ public class Player {
     private String name;
     private List<Pokemon> team;
     private TeamManager tm;
-
-    public Player(){}
-
-    public Player(String name){
-        this.name = name;
-        this.team = new ArrayList<>();
-    }
+    private boolean defeated;
+    private Pokemon currentPokemon;
 
     public void addPokemon(Pokemon pkmn){
         tm.add(pkmn, this.team);
@@ -28,4 +23,11 @@ public class Player {
         tm.remove(pkmn, this.team);
     }
 
+    public boolean isDefeated() {
+        return !team.stream().anyMatch(pokemon -> pokemon.getCurrentStats().getHitpoints() > 0);
+    }
+
+    public Pokemon getCurrentPokemon() {
+        return team.get(0);
+    }
 }

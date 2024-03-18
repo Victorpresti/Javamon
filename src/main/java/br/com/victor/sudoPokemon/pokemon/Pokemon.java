@@ -36,7 +36,7 @@ public class Pokemon implements Serializable {
         this.superWeaknesses = effectiveness.get(3);
         this.ineffective = effectiveness.get(4);
         this.baseStats = baseStats;
-        this.currentStats = new Stats(1, 1, 1, 1, 1, 1, 1);
+        this.currentStats = new Stats();
         this.status = Status.HEALTHY;
         this.maxHitpoints = 0;
         calculateStats();
@@ -56,7 +56,7 @@ public class Pokemon implements Serializable {
         this.superWeaknesses = effectiveness.get(3);
         this.ineffective = effectiveness.get(4);
         this.baseStats = baseStats;
-        this.currentStats = new Stats(1, 1, 1, 1, 1, 1, 1);
+        this.currentStats = new Stats();
         this.status = Status.HEALTHY;
         this.maxHitpoints = 0;
         calculateStats();

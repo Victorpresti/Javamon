@@ -16,16 +16,12 @@ public class DamageHandler {
     public int adjustDamage(Moves attackerMove, Pokemon attacker, Pokemon defender) {
 
         if (attackerMove.getDamageCategory().equals("Special")) {
-
                return (int) Math.round(((((((2.0 * attacker.getCurrentStats().getLevel()) / 5.0) + 2.0) * attackerMove.getDamage() *
                     ((double)attacker.getCurrentStats().getSpecialAttack() / (double) defender.getCurrentStats().getSpecialDefense())) / 50.0) + 2.0)  * modifiers(attackerMove, attacker, defender));
 
-        } else if (attackerMove.getDamageCategory().equals("Physical")) {
-
+        } else {
             return (int) Math.round(((((((2.0 * attacker.getCurrentStats().getLevel()) / 5.0) + 2.0) * attackerMove.getDamage() *
                     ((double) attacker.getCurrentStats().getAttack() / (double)defender.getCurrentStats().getDefense())) / 50.0) + 2.0) * modifiers(attackerMove, attacker, defender));
-        } else {
-            return 0;
         }
     }
 
